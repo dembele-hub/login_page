@@ -5,32 +5,32 @@ void main() {
 }
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
-  LoginScreen1State createState() => LoginScreen1State();
+  LoginScreenState createState() => LoginScreenState();
 }
 
-class LoginScreen1State extends State<LoginScreen> {
+class LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     final emailField = TextField(
       style: const TextStyle(fontSize: 20.0),
       decoration: InputDecoration(
-          contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "Email",
-          border:
-          OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+        contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        hintText: "Email",
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+      ),
     );
 
     final passwordField = TextField(
       obscureText: true,
       style: const TextStyle(fontSize: 20.0),
       decoration: InputDecoration(
-          contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "Password",
-          border:
-          OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+        contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        hintText: "Password",
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+      ),
     );
 
     final loginButton = Material(
@@ -41,12 +41,15 @@ class LoginScreen1State extends State<LoginScreen> {
         minWidth: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {},
-        child: const Text("Login",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                fontSize: 20.0,
-                color: Colors.white,
-                fontWeight: FontWeight.bold)),
+        child: const Text(
+          "Login",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 20.0,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
     );
 
@@ -63,7 +66,7 @@ class LoginScreen1State extends State<LoginScreen> {
                 Container(
                   height: 100.0,
                   child: Image.asset(
-                    "image/image_logo.png.jpg",
+                    "image/image_logo.png", // Correct the image asset path
                     fit: BoxFit.contain,
                   ),
                 ),
