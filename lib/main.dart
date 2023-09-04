@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const LoginScreen());
-}
+void main() => runApp(const MaterialApp(
+  home:  LoginScreen(),
+));
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -66,7 +66,7 @@ class LoginScreenState extends State<LoginScreen> {
                 Container(
                   height: 100.0,
                   child: Image.asset(
-                    "image/image_logo.png", // Correct the image asset path
+                    "image/image_logo.png.jpg", // Correct the image asset path
                     fit: BoxFit.contain,
                   ),
                 ),
